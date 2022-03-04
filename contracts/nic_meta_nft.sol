@@ -25,7 +25,7 @@ contract NicMeta is ERC721Enumerable, Ownable {
     mapping(uint256 => string) private _tokenURIs;
 
     constructor(string memory initBaseURI, string memory initNotRevealedUri)
-        ERC721("Nic Meta", "NM")
+        ERC721("EVL Meta", "EVL")
     {
         setBaseURI(initBaseURI);
         setNotRevealedURI(initNotRevealedUri);
@@ -36,7 +36,7 @@ contract NicMeta is ERC721Enumerable, Ownable {
             totalSupply() + tokenQuantity <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        require(_isSaleActive, "Sale must be active to mint NicMetas");
+        require(_isSaleActive, "Sale must be active to mint EVLMetas");
         require(
             balanceOf(msg.sender) + tokenQuantity <= maxBalance,
             "Sale would exceed max balance"
